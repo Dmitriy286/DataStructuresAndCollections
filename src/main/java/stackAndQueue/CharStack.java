@@ -1,25 +1,25 @@
 package stackAndQueue;
 
-public class StackX {
+public class CharStack {
     private int maxSize;
-    private long[] stackArray;
+    private char[] stackArray;
     private int top;
 
-    public StackX(int maxSize) {
+    public CharStack(int maxSize) {
         this.maxSize = maxSize;
-        stackArray = new long[maxSize];
+        stackArray = new char[maxSize];
         top = -1;
     }
 
-    public void push(long j) {
+    public void push(char j) {
         stackArray[++top] = j;
     }
 
-    public long pop() {
+    public char pop() {
         return stackArray[top--];
     }
 
-    public long peek() {
+    public char peek() {
         return stackArray[top];
     }
 

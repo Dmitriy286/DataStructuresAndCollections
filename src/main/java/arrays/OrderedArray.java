@@ -1,3 +1,5 @@
+package arrays;
+
 public class OrderedArray {
     private long[] a;
     private int nElems;
@@ -91,7 +93,7 @@ public class OrderedArray {
         int secondCount = 0;
 //        int cycleLength = Math.max(firstArray.length, secondArray.length);
         int cycleLength = firstArray.size() + secondArray.size();
-//        OrderedArray resultArray = new OrderedArray(cycleLength);
+//        arrays.OrderedArray resultArray = new arrays.OrderedArray(cycleLength);
         for (int i = 0; i < cycleLength; i++) {
             if (firstCount >= firstArray.size()) {
                 this.addAll(secondArray, secondCount, secondArray.size());

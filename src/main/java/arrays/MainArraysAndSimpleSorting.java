@@ -1,3 +1,5 @@
+package arrays;
+
 import java.util.Random;
 import java.util.Vector;
 import java.util.function.Function;
@@ -14,8 +16,8 @@ public class MainArraysAndSimpleSorting {
 //        highArrayNoDups();
 //        bubbleSort();
 //        Thread.sleep(1000);
-//        selectionSort();
-        improvedSelectionSort();
+        selectionSort();
+//        improvedSelectionSort();
 //        Thread.sleep(1000);
 //        insertionSort();
 //        Thread.sleep(1000);
@@ -408,7 +410,7 @@ public class MainArraysAndSimpleSorting {
     }
 
     private static void biDirectionalBubbleSort() {
-//        HighArray arr = createRandomArray();
+//        arrays.HighArray arr = createRandomArray();
 
         HighArray arr = new HighArray(10);
 
@@ -535,7 +537,7 @@ public class MainArraysAndSimpleSorting {
         Operation operation = () -> arr.oddEvenSort();
         timeMeasure(operation);
 
-//        HighArray arr = new HighArray(100);
+//        arrays.HighArray arr = new arrays.HighArray(100);
 
 //        arr.insert(100);
 //        arr.insert(44);
@@ -569,7 +571,7 @@ public class MainArraysAndSimpleSorting {
     }
 
     private static void insertSortCount() {
-//        HighArray arr = new HighArray(100);
+//        arrays.HighArray arr = new arrays.HighArray(100);
 //
 ////        arr.insert(100);
 //        arr.insert(44);
@@ -609,7 +611,7 @@ public class MainArraysAndSimpleSorting {
 ////        arr.insert(100);
 
         HighArray arr = createRandomArray();
-//        Operation operation = () -> arr.insertionSort();
+//        arrays.Operation operation = () -> arr.insertionSort();
 //        timeMeasure(operation);
 ////
 //        arr.display();
@@ -617,7 +619,7 @@ public class MainArraysAndSimpleSorting {
 //        arr.insertionSort();
 //        arr.display();
 
-//        HighArray arr = createReversedSortedArray();
+//        arrays.HighArray arr = createReversedSortedArray();
 //        arr.display();
 
         arr.insertionSort();
