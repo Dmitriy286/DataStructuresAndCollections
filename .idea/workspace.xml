@@ -4,23 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9f6a1193-f66f-4e4c-b646-bfa9dac61a4c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/stackAndQueue/BracketChecker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/stackAndQueue/BracketsApp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/stackAndQueue/CharStack.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/stackAndQueue/Queue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/stackAndQueue/ReverseApp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/stackAndQueue/Reverser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/stackAndQueue/StackApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="9f6a1193-f66f-4e4c-b646-bfa9dac61a4c" name="Changes" comment="Stack">
+      <change afterPath="$PROJECT_DIR$/src/main/java/stackAndQueue/Deque.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/stackAndQueue/DequeApp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/stackAndQueue/InToPost.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/stackAndQueue/InfixPostfixApp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/stackAndQueue/IntStack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/stackAndQueue/ParsePost.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/stackAndQueue/PostfixCalcApp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/stackAndQueue/PriorityQueue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/stackAndQueue/PriorityQueueApp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/stackAndQueue/PriorityQueueFastIns.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/stackAndQueue/PriorityQueueFastInsApp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/stackAndQueue/QueueApp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/stackAndQueue/StackDeque.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/stackAndQueue/StackDequeApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/arrays/HighArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/arrays/HighArray.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/arrays/MainArraysAndSimpleSorting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/arrays/MainArraysAndSimpleSorting.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/arrays/MyVector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/arrays/MyVector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/arrays/Operation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/arrays/Operation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/arrays/OrderedArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/arrays/OrderedArray.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/stackAndQueue/StackX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/stackAndQueue/StackX.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/stackAndQueue/CharStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/stackAndQueue/CharStack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/stackAndQueue/Queue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/stackAndQueue/Queue.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,9 +57,9 @@
     &quot;last_opened_file_path&quot;: &quot;C:/Users/Professional/IdeaProjects/RandomNumberClientServerApp&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.BracketsApp">
-    <configuration name="BracketsApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="stackAndQueue.BracketsApp" />
+  <component name="RunManager" selected="Application.PriorityQueueFastInsApp">
+    <configuration name="DequeApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="stackAndQueue.DequeApp" />
       <module name="DataStructures and Collections" />
       <extension name="coverage">
         <pattern>
@@ -70,15 +71,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MainArraysAndSimpleSorting" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="arrays.MainArraysAndSimpleSorting" />
-      <module name="DataStructures and Collections" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ReverseApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="stackAndQueue.ReverseApp" />
+    <configuration name="PostfixCalcApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="stackAndQueue.PostfixCalcApp" />
       <module name="DataStructures and Collections" />
       <extension name="coverage">
         <pattern>
@@ -90,8 +84,34 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StackApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="stackAndQueue.StackApp" />
+    <configuration name="PriorityQueueFastInsApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="stackAndQueue.PriorityQueueFastInsApp" />
+      <module name="DataStructures and Collections" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="stackAndQueue.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="QueueApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="stackAndQueue.QueueApp" />
+      <module name="DataStructures and Collections" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="stackAndQueue.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StackDequeApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="stackAndQueue.StackDequeApp" />
       <module name="DataStructures and Collections" />
       <extension name="coverage">
         <pattern>
@@ -105,10 +125,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.BracketsApp" />
-        <item itemvalue="Application.ReverseApp" />
-        <item itemvalue="Application.StackApp" />
-        <item itemvalue="Application.MainArraysAndSimpleSorting" />
+        <item itemvalue="Application.PriorityQueueFastInsApp" />
+        <item itemvalue="Application.StackDequeApp" />
+        <item itemvalue="Application.DequeApp" />
+        <item itemvalue="Application.QueueApp" />
+        <item itemvalue="Application.PostfixCalcApp" />
       </list>
     </recent_temporary>
   </component>
@@ -123,8 +144,17 @@
       <workItem from="1669468941048" duration="74069000" />
       <workItem from="1672159884091" duration="5940000" />
       <workItem from="1672681857418" duration="599000" />
-      <workItem from="1672684322522" duration="6651000" />
+      <workItem from="1672684322522" duration="24460000" />
+      <workItem from="1673116993735" duration="4564000" />
     </task>
+    <task id="LOCAL-00001" summary="Stack">
+      <created>1672831532873</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1672831532873</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -141,6 +171,10 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Stack" />
+    <option name="LAST_COMMIT_MESSAGE" value="Stack" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -148,6 +182,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/arrays/HighArray.java</url>
           <line>62</line>
           <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/stackAndQueue/InToPost.java</url>
+          <line>48</line>
+          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
