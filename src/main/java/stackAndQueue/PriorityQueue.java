@@ -12,6 +12,12 @@ public class PriorityQueue {
     }
 
     public void insert(long item) {
+
+        if (maxSize == nItems) {
+            System.out.println("Limit is reached");
+            return;
+        }
+
         int i;
         if (nItems == 0) {
             queArray[nItems++] = item;
