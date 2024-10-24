@@ -16,7 +16,6 @@ public class CycleLinkedListApp {
         cycleLinkedList.insert(4);
 
         cycleLinkedList.display();
-//        cycleLinkedList.infiniteDisplay();
 
         System.out.println("found: " + cycleLinkedList.find(2));
 
