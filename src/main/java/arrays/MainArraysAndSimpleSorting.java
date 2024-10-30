@@ -10,16 +10,16 @@ public class MainArraysAndSimpleSorting {
 //        timeEval(myVector.linearSearchByValueFunction(3));
 //        highArrayInit();
 //        highArrayGetMax();
-//        sortHighArray();
+        sortHighArray();
 //        orderedArrayInit();
 //        mergeOrderedArrays();
 //        highArrayNoDups();
-//        bubbleSort();
+        bubbleSort();
 //        Thread.sleep(1000);
         selectionSort();
 //        improvedSelectionSort();
 //        Thread.sleep(1000);
-//        insertionSort();
+        insertionSort();
 //        Thread.sleep(1000);
 //        sortReversedSortedArray();
 //        Thread.sleep(1000);
@@ -32,6 +32,8 @@ public class MainArraysAndSimpleSorting {
 //        oddEvenSorting();
 //        insertSortCount();
 //        insertSortAndDeleteDups();
+
+        mergeSort();
 
     }
 
@@ -256,7 +258,7 @@ public class MainArraysAndSimpleSorting {
         for (int i = maxSize; i > 0; i--) {
             arr.insert(r.nextLong(maxSize));
         }
-        arr.display();
+//        arr.display();
         return arr;
     }
 
@@ -673,6 +675,39 @@ public class MainArraysAndSimpleSorting {
         arr.insertionSortNoDups();
 
         arr.display();
+
+    }
+
+    private static void mergeSort() {
+//        int maxSize = 100;
+//
+//        HighArray array;
+//
+//        array = new HighArray(maxSize);
+//
+//        array.insert(64);
+//        array.insert(21);
+//        array.insert(33);
+//        array.insert(70);
+//        array.insert(12);
+//        array.insert(85);
+//        array.insert(44);
+//        array.insert(3);
+//        array.insert(99);
+//        array.insert(0);
+//        array.insert(108);
+//        array.insert(36);
+//
+//        array.display();
+//
+//        array.mergeSort();
+//
+//        array.display();
+
+
+        HighArray arr = createRandomArray();
+        Operation operation = () -> arr.mergeSort();
+        timeMeasure(operation);
 
     }
 }

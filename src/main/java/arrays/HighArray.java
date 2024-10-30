@@ -1,5 +1,6 @@
 package arrays;
 
+import java.util.Arrays;
 import java.util.Random;
 
 public class HighArray {
@@ -338,6 +339,54 @@ public class HighArray {
 
     public long get(int index) {
         return a[index];
+    }
+
+    public void mergeSort() {
+        long[] workSpace = new long[nElems];
+
+        recMergeSort(workSpace, 0, nElems - 1);
+    }
+
+    private void recMergeSort(long[] workSpace, int lowerBound, int upperBound) {
+
+        if (lowerBound == upperBound) {
+            return;
+        } else {
+            int mid = (lowerBound + upperBound) / 2;
+
+            recMergeSort(workSpace, lowerBound, mid);
+            recMergeSort(workSpace, mid + 1, upperBound);
+
+            merge(workSpace, lowerBound, mid + 1, upperBound);
+        }
+    }
+
+    private void merge(long[] workSpace, int lowPtr, int highPtr, int upperBound) {
+        int j = 0;
+        int lowerBound = lowPtr;
+        int mid = highPtr - 1;
+        int n = upperBound - lowerBound + 1;
+
+        while (lowPtr <= mid && highPtr <= upperBound) {
+
+            if (a[lowPtr] < a[highPtr]) {
+                workSpace[j++] = a[lowPtr++];
+            } else {
+                workSpace[j++] = a[highPtr++];
+            }
+        }
+
+        while (lowPtr <= mid) {
+            workSpace[j++] = a[lowPtr++];
+        }
+
+        while (highPtr <= upperBound) {
+            workSpace[j++] = a[highPtr++];
+        }
+
+        for (int i = 0; i < n; i++) {
+            a[lowerBound + i] = workSpace[i];
+        }
     }
 
 
