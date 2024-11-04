@@ -1,5 +1,8 @@
 package arrays;
 
+import sorting.ArrayIns;
+import sorting.ArraySh;
+
 import java.util.Random;
 import java.util.Vector;
 import java.util.function.Function;
@@ -10,16 +13,23 @@ public class MainArraysAndSimpleSorting {
 //        timeEval(myVector.linearSearchByValueFunction(3));
 //        highArrayInit();
 //        highArrayGetMax();
-        sortHighArray();
+//        sortHighArray();
+//        System.out.println("=======================================================");
 //        orderedArrayInit();
 //        mergeOrderedArrays();
 //        highArrayNoDups();
-        bubbleSort();
+//        bubbleSort();
+//        System.out.println("=======================================================");
+
 //        Thread.sleep(1000);
-        selectionSort();
+//        selectionSort();
+//        System.out.println("=======================================================");
+
 //        improvedSelectionSort();
 //        Thread.sleep(1000);
-        insertionSort();
+//        insertionSort();
+//        System.out.println("=======================================================");
+
 //        Thread.sleep(1000);
 //        sortReversedSortedArray();
 //        Thread.sleep(1000);
@@ -34,6 +44,13 @@ public class MainArraysAndSimpleSorting {
 //        insertSortAndDeleteDups();
 
         mergeSort();
+        System.out.println("=======================================================");
+
+
+        shellSort();
+        System.out.println("=======================================================");
+
+        quickSort();
 
     }
 
@@ -252,7 +269,7 @@ public class MainArraysAndSimpleSorting {
     }
 
     private static HighArray createRandomArray() {
-        int maxSize = 100_000;
+        int maxSize = 10_000_000;
         HighArray arr = new HighArray(maxSize);
         Random r = new Random();
         for (int i = maxSize; i > 0; i--) {
@@ -707,6 +724,35 @@ public class MainArraysAndSimpleSorting {
 
         HighArray arr = createRandomArray();
         Operation operation = () -> arr.mergeSort();
+        timeMeasure(operation);
+
+    }
+
+
+    private static void shellSort() {
+
+        int maxSize = 10_000_000;
+        ArraySh arr = new ArraySh(maxSize);
+        Random r = new Random();
+        for (int i = maxSize; i > 0; i--) {
+            arr.insert(r.nextLong(maxSize));
+        }
+
+        Operation operation = () -> arr.shellSort();
+        timeMeasure(operation);
+
+    }
+
+    private static void quickSort() {
+
+        int maxSize = 10_000_000;
+        ArrayIns arr = new ArrayIns(maxSize);
+        Random r = new Random();
+        for (int i = maxSize; i > 0; i--) {
+            arr.insert(r.nextLong(maxSize));
+        }
+
+        Operation operation = () -> arr.quickSort();
         timeMeasure(operation);
 
     }
