@@ -285,7 +285,7 @@ public class HighArray {
         } else {
             medianValue = a[nElems / 2];
         }
-        System.out.println(medianValue);
+        System.out.println("medianValue: " + medianValue);
     }
 
     public void noDupsInSortedArray() {
