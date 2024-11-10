@@ -85,6 +85,57 @@ public class ArrayPar {
         }
     }
 
+    public void chose(int chosenIndex) {
+
+        long chosen = calculateChosen(chosenIndex, 0, size() - 1);
+
+        System.out.println("Chosen is: " + chosen);
+
+    }
+
+    public long calculateChosen(int chosenIndex, int left, int right) {
+
+        int pivot = partitionIt(left, right);
+
+        if (pivot == chosenIndex) {
+
+            return theArray[pivot];
+        }
+
+        if (pivot < chosenIndex) {
+            return calculateMedian(chosenIndex, pivot + 1, right);
+        } else {
+            return calculateMedian(chosenIndex, left, pivot - 1);
+        }
+    }
+
+    public void insertionSort() {
+
+        long copyCount = 0;
+        long compareCount = 0;
+
+        for (int i = 1; i < nElems; i++) {
+            long temp = theArray[i];
+            int j = i;
+
+            while (j > 0) {
+                compareCount++;
+                if (temp <= theArray[j - 1]) {
+                    theArray[j] = theArray[j - 1];
+
+                    copyCount++;
+                    --j;
+
+                } else {
+                    break;
+                }
+            }
+
+            theArray[j] = temp;
+            copyCount++;
+        }
+    }
+
     public void display() {
 
         for (int j = 0; j < nElems; j++) {

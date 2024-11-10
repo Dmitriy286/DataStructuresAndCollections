@@ -9,11 +9,45 @@ public class PartitionApp {
 
 //        partition();
 
-        int maxSize = 8;
+        int maxSize = 1;
 
-        median(maxSize);
+//        median(maxSize);
+//
+//        oldMedian(maxSize);
 
-        oldMedian(maxSize);
+        int chosenIndex = 0;
+
+        chose(maxSize, chosenIndex);
+    }
+
+    private static void chose(int maxSize, int chosenIndex) {
+
+        ArrayPar arr;
+
+        arr = new ArrayPar(maxSize);
+
+//        for (int i = 0; i < maxSize; i++) {
+//        for (int i = 2; i <= maxSize * 2; i += 2) {
+//
+//            arr.insert(i);
+//        }
+
+        arr.insert(1);
+//        arr.insert(5);
+//        arr.insert(3);
+//        arr.insert(25);
+//        arr.insert(19);
+//        arr.insert(17);
+//        arr.insert(21);
+//        arr.insert(34);
+
+        arr.display();
+
+        arr.chose(chosenIndex);
+
+        arr.insertionSort();
+        arr.display();
+
     }
 
     private static void oldMedian(int maxSize) {
