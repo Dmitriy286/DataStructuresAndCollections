@@ -10,93 +10,16 @@ public class TreeApp {
 
     public static void main(String[] args) throws IOException {
 
-        String[] letters = new String[]{"A", "B", "C", "D", "E", "F", "G", "H", "I", "J"};
+//        String[] letters = new String[]{"A", "B", "C", "D", "E", "F", "G", "H", "I", "J"};
 
 //        Tree stringDataBalancedTree = createStringDataBalancedTree(letters);
 //        stringDataBalancedTree.display();
 
-        Tree fullTree = createFullTree(letters);
+//        Tree fullTree = createFullTree(letters);
+//        fullTree.display();
 
-        fullTree.display();
+        parsePostfixToTree();
 
-    }
-
-    private static Tree createFullTree(String[] letters) {
-        Tree tree = new Tree();
-        Node node = new Node();
-        tree.setRoot(node);
-
-        fillNodeForFullTree(0, node, letters);
-
-        return tree;
-    }
-
-    private static void fillNodeForFullTree(int index, Node node, String[] letters) {
-        if (index >= letters.length) {
-            return;
-        }
-
-        node.sData = letters[index];
-
-        node.leftChild = new Node();
-        fillNodeForFullTree((index + 1) * 2 - 1, node.leftChild, letters);
-
-        node.rightChild = new Node();
-        fillNodeForFullTree((index + 1) * 2, node.rightChild, letters);
-    }
-
-    private static Tree createStringDataBalancedTree(String[] letters) {
-
-        List<Tree> forest = new ArrayList<>();
-
-        for (int i = 0; i < letters.length; i++) {
-
-            Tree tree = new Tree();
-
-            Node node = new Node();
-            node.sData = letters[i];
-
-            tree.setRoot(node);
-
-            forest.add(tree);
-        }
-
-        int forestLength;
-
-        while (true) {
-
-            forestLength = forest.size();
-
-            for (int i = 0; i < forestLength; i+=2) {
-                Tree tree = new Tree();
-
-                Node node = new Node();
-                node.sData = "+";
-
-                node.leftChild = forest.get(i).getRoot();
-
-
-                if (forest.size() > 1) {
-                    if (i + 1 < forestLength) {
-                        node.rightChild = forest.get(i + 1).getRoot();
-                    }
-                }
-
-                tree.setRoot(node);
-
-                forest.add(tree);
-            }
-
-            forest.forEach(Tree::display);
-
-            for (int i = 0; i < forestLength; i++) {
-                forest.remove(0);
-            }
-
-            if (forest.size() == 1) {
-                return forest.get(0);
-            }
-        }
     }
 
     private static Tree createStringDataTree(String[] letters) {
@@ -206,5 +129,96 @@ public class TreeApp {
         String s = br.readLine();
 
         return s;
+    }
+
+
+    private static Tree createStringDataBalancedTree(String[] letters) {
+
+        List<Tree> forest = new ArrayList<>();
+
+        for (int i = 0; i < letters.length; i++) {
+
+            Tree tree = new Tree();
+
+            Node node = new Node();
+            node.sData = letters[i];
+
+            tree.setRoot(node);
+
+            forest.add(tree);
+        }
+
+        int forestLength;
+
+        while (true) {
+
+            forestLength = forest.size();
+
+            for (int i = 0; i < forestLength; i+=2) {
+                Tree tree = new Tree();
+
+                Node node = new Node();
+                node.sData = "+";
+
+                node.leftChild = forest.get(i).getRoot();
+
+
+                if (forest.size() > 1) {
+                    if (i + 1 < forestLength) {
+                        node.rightChild = forest.get(i + 1).getRoot();
+                    }
+                }
+
+                tree.setRoot(node);
+
+                forest.add(tree);
+            }
+
+            forest.forEach(Tree::display);
+
+            for (int i = 0; i < forestLength; i++) {
+                forest.remove(0);
+            }
+
+            if (forest.size() == 1) {
+                return forest.get(0);
+            }
+        }
+    }
+
+
+    private static Tree createFullTree(String[] letters) {
+        Tree tree = new Tree();
+        Node node = new Node();
+        tree.setRoot(node);
+
+        fillNodeForFullTree(0, node, letters);
+
+        return tree;
+    }
+
+    private static void fillNodeForFullTree(int index, Node node, String[] letters) {
+        if (index >= letters.length) {
+            return;
+        }
+
+        node.sData = letters[index];
+
+        node.leftChild = new Node();
+        fillNodeForFullTree((index + 1) * 2 - 1, node.leftChild, letters);
+
+        node.rightChild = new Node();
+        fillNodeForFullTree((index + 1) * 2, node.rightChild, letters);
+    }
+
+
+    private static void parsePostfixToTree() {
+        ParsePost parsePost = new ParsePost("ABCD+*/");
+
+        PostfixTree postfixTree = parsePost.doParse();
+        postfixTree.display();
+        postfixTree.traverse(1);
+        postfixTree.traverse(2);
+        postfixTree.traverse(3);
     }
 }
