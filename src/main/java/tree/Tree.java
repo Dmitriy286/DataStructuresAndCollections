@@ -1,8 +1,13 @@
 package tree;
 
+import java.util.Objects;
+import java.util.Stack;
+
 public class Tree {
 
     private Node root;
+
+    private int size;
 
     public Tree() {
         root = null;
@@ -66,6 +71,8 @@ public class Tree {
                 }
             }
         }
+
+        size++;
     }
 
     public boolean delete(int key) {
@@ -127,9 +134,153 @@ public class Tree {
         Node successor = deletedNode;
         Node current = deletedNode.rightChild;
 
+        while (current != null) {
+            successorParent = successor;
+            successor = current;
+            current = current.leftChild;
+        }
 
+        if (successor != deletedNode.rightChild) {
+            successorParent.leftChild = successor.rightChild;
+            successor.rightChild = deletedNode.rightChild;
+        }
 
+        return successor;
     }
 
+    public void traverse(int traverseType) {
 
+        switch (traverseType) {
+            case 1:
+                System.out.println("Preorder traversal:");
+                preOrder(root);
+                break;
+            case 2:
+                System.out.println("Inorder traversal:");
+                inOrder(root);
+                break;
+            case 3:
+                System.out.println("Postorder traversal:");
+                postOrder(root);
+                break;
+        }
+    }
+
+    private void preOrder(Node localRoot) {
+
+        if (localRoot != null) {
+            System.out.print(localRoot.iData + " ");
+            preOrder(localRoot.leftChild);
+            preOrder(localRoot.rightChild);
+        }
+    }
+
+    private void inOrder(Node localRoot) {
+        inOrder(localRoot.leftChild);
+        System.out.print(localRoot.iData + " ");
+        inOrder(localRoot.rightChild);
+    }
+
+    private void postOrder(Node localRoot) {
+        postOrder(localRoot.leftChild);
+        postOrder(localRoot.rightChild);
+        System.out.print(localRoot.iData + " ");
+    }
+
+    public void display() {
+        Stack globalStack = new Stack();
+        globalStack.push(root);
+
+        int treeSize = countTreeSize(root);
+
+        int nBlanks = 1;
+
+        while (true) {
+            nBlanks = 2 * nBlanks;
+
+            if (nBlanks * 2 > treeSize) {
+                nBlanks = nBlanks * 4;
+                break;
+            }
+        }
+
+        boolean isRowEmpty = false;
+        System.out.println(".....................................................................");
+
+        while (isRowEmpty == false) {
+            Stack localStack = new Stack();
+            isRowEmpty = true;
+
+            for (int i = 0; i < nBlanks; i++) {
+                System.out.print(" ");
+            }
+
+            while (globalStack.isEmpty() == false) {
+                Node temp = (Node) globalStack.pop();
+
+                if (temp != null) {
+                    System.out.print(temp.sData);
+
+                    localStack.push(temp.leftChild);
+                    localStack.push(temp.rightChild);
+
+                    if (temp.leftChild != null  && !Objects.equals(temp.leftChild.sData, "*")
+                            ||
+                        temp.rightChild != null && !Objects.equals(temp.rightChild.sData, "*") ) {
+
+                        isRowEmpty = false;
+                    }
+                } else {
+                    System.out.print("--");
+                    localStack.push(null);
+                    localStack.push(null);
+                }
+
+
+                for (int i = 0; i < nBlanks * 2 - 1; i++) {
+                    System.out.print(" ");
+                }
+            }
+
+
+            System.out.println();
+            nBlanks /= 2;
+            while (localStack.isEmpty() == false) {
+                globalStack.push(localStack.pop());
+            }
+        }
+
+        System.out.println(".....................................................................");
+    }
+
+    public Node getRoot() {
+        return root;
+    }
+
+    public void setRoot(Node root) {
+        this.root = root;
+        size++;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    public int getTreeSize(Node rootNode) {
+
+        return countTreeSize(rootNode);
+    }
+
+    private int countTreeSize(Node rootNode) {
+
+        if (rootNode != null && !Objects.equals(rootNode.sData, "*")) {
+
+            int leftSize = countTreeSize(rootNode.leftChild);
+            int rightSize = countTreeSize(rootNode.rightChild);
+
+            return 1 + leftSize + rightSize;
+        }
+
+        return 0;
+    }
 }

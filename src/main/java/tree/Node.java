@@ -4,6 +4,7 @@ public class Node {
 
     public int iData;
     public double dData;
+    public String sData = "*";
     public Node leftChild;
     public Node rightChild;
 
