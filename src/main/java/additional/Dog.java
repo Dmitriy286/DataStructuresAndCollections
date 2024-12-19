@@ -1,4 +1,4 @@
-package hashtable;
+package additional;
 
 public class Dog extends Animal implements WalkingAndRunning{
     @Override

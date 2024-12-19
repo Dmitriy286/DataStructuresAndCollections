@@ -1,4 +1,4 @@
-package hashtable;
+package additional;
 
 public abstract class Animal {
     public void eat() {

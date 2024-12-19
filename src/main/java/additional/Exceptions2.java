@@ -1,4 +1,4 @@
-package hashtable;
+package additional;
 
 import java.io.IOException;
 import java.util.Scanner;
