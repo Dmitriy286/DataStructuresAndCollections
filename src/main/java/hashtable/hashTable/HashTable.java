@@ -82,10 +82,12 @@ public class HashTable {
     public void insert(DataItem item) {
 
         boolean needToRehash = checkCapacity();
+
         if (needToRehash) {
+            capacity = 0;
+
             rehash();
         }
-
 
         int key = item.getKey();
         int hash = hash(key);
@@ -97,7 +99,10 @@ public class HashTable {
             hash %= size;
         }
 
+
         hashArray[hash] = item;
+
+        capacity++;
     }
 
     public DataItem delete(int key) {
@@ -108,6 +113,9 @@ public class HashTable {
             if (hashArray[hash].getKey() == key) {
                 DataItem temp = hashArray[hash];
                 hashArray[hash] = nonItem;
+
+                capacity--;
+
                 return temp;
             }
 
@@ -122,9 +130,7 @@ public class HashTable {
         int hash = hash(key);
         int step = 1;
 
-
         while (hashArray[hash] != null) {
-            System.out.println("Try to find");
 
             if (hashArray[hash].getKey() == key) {
                 return hashArray[hash];
@@ -140,10 +146,47 @@ public class HashTable {
 
     private boolean checkCapacity() {
 
+        return capacity > size * LOAD_FACTOR;
     }
 
     private void rehash() {
 
-        getPrime()
+        int oldArraySize = size;
+
+        int newArraySize = getPrime(size * 2);
+
+        DataItem[] oldHashArray = hashArray.clone();
+
+        hashArray = new DataItem[newArraySize];
+        size = newArraySize;
+
+        for (int i = 0; i < oldArraySize; i++) {
+
+            if (oldHashArray[i] != null && oldHashArray[i].getKey() != -1) {
+
+                insert(oldHashArray[i]);
+            }
+        }
+    }
+
+    private int getPrime(int min) {
+
+        for (int i = min + 1; true; i++) {
+
+            if (isPrime(i)) {
+                return i;
+            }
+        }
+    }
+
+    private boolean isPrime(int n) {
+
+        for (int i = 2; i * i <= n; i++) {
+            if (n % i == 0) {
+                return false;
+            }
+        }
+
+        return true;
     }
 }
