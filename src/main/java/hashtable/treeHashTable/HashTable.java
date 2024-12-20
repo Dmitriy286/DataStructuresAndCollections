@@ -6,8 +6,6 @@ public class HashTable {
     private Tree[] hashArray;
     private int size;
 
-    private final static double LOAD_FACTOR = 0.5;
-    private int capacity;
 
     public HashTable(int size) {
         this.size = size;
@@ -46,8 +44,6 @@ public class HashTable {
         }
 
         hashArray[hash].insert(key, node.dData);
-
-        capacity++;
     }
 
     public Node find(int key) {
