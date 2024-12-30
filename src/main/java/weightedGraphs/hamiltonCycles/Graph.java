@@ -1,4 +1,4 @@
-package weightedGraphs.salesman;
+package weightedGraphs.hamiltonCycles;
 
 public class Graph {
 
@@ -9,8 +9,8 @@ public class Graph {
     private int nVerts;
 
     private int count;
-    private int minLength;
-    private int[] minPath;
+    private int index;
+    private int[][] cycles;
     private int[] initArray;
 
 
@@ -27,10 +27,13 @@ public class Graph {
         }
     }
 
-    public void salesManPath() {
+    public void searchForCycle() {
 
-        minLength = INFINITY;
-        minPath = new int[nVerts + 1];
+        cycles = new int[10000][nVerts + 1];
+
+        for (int i = 0; i < cycles.length; i++) {
+            cycles[i] = null;
+        }
 
         initArray = new int[nVerts];
 
@@ -40,10 +43,24 @@ public class Graph {
 
         doAnagram(nVerts);
 
-        System.out.println("Min path is: " + minLength);
+        System.out.println("Cycles: ");
 
-        for (int i = 0; i < nVerts + 1; i++) {
-            System.out.print(vertexList[minPath[i]].label);
+        int i = 0;
+
+        while (true) {
+
+            if (cycles[i] != null) {
+
+                for (int j = 0; j < nVerts + 1; j++) {
+                    System.out.print(vertexList[cycles[i][j]].label);
+                }
+
+                System.out.println();
+            } else {
+                break;
+            }
+
+            i++;
         }
     }
 
@@ -66,30 +83,16 @@ public class Graph {
 
         pathForCalculate[pathForCalculate.length - 1] = path[0];
 
-        int sum = 0;
-
-        for (int i = 0; i < nVerts + 1; i++) {
-            System.out.print(vertexList[pathForCalculate[i]].label);
-        }
-
-        System.out.print("   ");
-
         for (int i = 0; i < pathForCalculate.length - 1; i++) {
 
             if (adjMatrix[pathForCalculate[i]][pathForCalculate[i + 1]] == INFINITY) {
-                System.out.println("Can not create a path");
+
                 return;
             }
-
-            sum += adjMatrix[pathForCalculate[i]][pathForCalculate[i + 1]];
         }
 
-        System.out.println("sum: " + sum);
-
-        if (sum < minLength) {
-            minLength = sum;
-            minPath = pathForCalculate;
-        }
+        cycles[index] = pathForCalculate;
+        index++;
     }
 
     private void doAnagram(int newSize) {
@@ -103,6 +106,7 @@ public class Graph {
             doAnagram(newSize - 1);
 
             if (newSize == 2) {
+//                displayWord();
                 calculatePath(initArray);
             }
 
@@ -122,7 +126,7 @@ public class Graph {
 
         System.out.print(++count + " ");
 
-        for (int i = 0; i < nVerts + 1; i++) {
+        for (int i = 0; i < nVerts; i++) {
             System.out.print(vertexList[initArray[i]].label);
         }
 
