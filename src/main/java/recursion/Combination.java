@@ -7,6 +7,7 @@ import java.util.List;
 public class Combination {
 
     private static String[] group = {"A", "B", "C", "D", "E"};
+//    private static String[] group = {"C", "A", "T", "S"};
     private static List<String> team = new ArrayList<>();
     private static int cursor;
 
