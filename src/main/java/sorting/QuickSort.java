@@ -4,7 +4,7 @@ public class QuickSort {
 
     public static void main(String[] args) {
 
-        int maxSize = 100;
+        int maxSize = 10;
         ArrayIns arr;
 
         arr = new ArrayIns(maxSize);
